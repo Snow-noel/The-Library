@@ -6,26 +6,22 @@ const Author=document.getElementById("author");
 const Pages=document.getElementById("pages");
 const Read=document.getElementById("read");
 const Add=document.getElementById("Add");
+const createbook=document.querySelector(".createbook");
+
+
 const mylibrary=[];
+
 function Book(title,author,pages,read){
     this.title=title;
     this.author=author;
     this.pages=pages;
     this.read=read;
 }
-
-function addbook(){
-
-       let book=new Book(Title.value,Author.value,Pages.value,Read.value);
-       mylibrary.push(book);
-       added=true
-       Title.value=""
-       Author.value=""
-       Pages.value=""
-       Read.value=""
-}
+    let mybook=new Book("Found Love","Snow",5000,"yes")
+     mylibrary.push(mybook);
 function veiwbooks(){
     books.innerHTML="";
+    
 for (let i=0; i<mylibrary.length; i++){
     const book=document.createElement('div');
     const details=document.createElement('h2');
@@ -38,14 +34,26 @@ for (let i=0; i<mylibrary.length; i++){
     `
     books.style.cssText=`
     display: grid;
-    grid-template-columns:1fr 1fr ;
-    grid-template-rows: 1fr 1f;
-    gap:2rem;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1f 1fr 1fr;
     `
     books.appendChild(book)
     book.append(details);
 }
 }
+
+function addbook(){
+       
+       let book=new Book(Title.value,Author.value,Pages.value,Read.value);
+       mylibrary.push(book);
+       Title.value=""
+       Author.value=""
+       Pages.value=""
+       Read.value=""
+       checkBook.textContent="veiw updated library"
+    
+}
+
 checkBook.addEventListener("click",veiwbooks,);
 
 Add.addEventListener("click",()=>{
