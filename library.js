@@ -28,7 +28,7 @@ for (let i=0; i<mylibrary.length; i++){
     const book=document.createElement('div');
     const details=document.createElement('h2');
     details.setAttribute('class','details');
-    book.setAttribute("class","mybook");
+    book.setAttribute("class","mybooks");
     details.innerText=`Title: ${mylibrary[i].title}
     Author: ${mylibrary[i].author}
     Pages: ${mylibrary[i].pages}
