@@ -37,6 +37,7 @@ for (let i=0; i<mylibrary.length; i++){
     books.style.cssText=`
     display: grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:1rem;
     `
     books.appendChild(book)
     book.append(details);
