@@ -36,8 +36,7 @@ for (let i=0; i<mylibrary.length; i++){
     `
     books.style.cssText=`
     display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1f 1fr 1fr;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     `
     books.appendChild(book)
     book.append(details);
