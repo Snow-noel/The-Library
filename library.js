@@ -48,8 +48,9 @@ for (let i=0; i<mylibrary.length; i++){
     book.append(details);
     book.append(Delete);
 Delete.addEventListener("click",()=>{
-
-        book.style.display="none"
+    mylibrary.splice(i,1)
+    veiwbooks();
+        
     })
 }
 
