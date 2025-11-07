@@ -28,24 +28,32 @@ for (let i=0; i<mylibrary.length; i++){
     
     const book=document.createElement('div');
     const details=document.createElement('h2');
+    const Delete=document.createElement('button')
+    Delete.textContent="Delete"
+    Delete.classList.add('delete')
     details.setAttribute('class','details');
-    book.setAttribute("class","mybooks");
+    book.classList.add("mybook")
     details.innerText=`Title: ${mylibrary[i].title}
     Author: ${mylibrary[i].author}
     Pages: ${mylibrary[i].pages}
-    Read Status: ${mylibrary[i].read}
+    Status: ${mylibrary[i].read}
     `
     books.style.cssText=`
     display: grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:1rem;
+    gap:0.1rem;
     justify-items:center;
     `
     books.appendChild(book)
     book.append(details);
-}
+    book.append(Delete);
+Delete.addEventListener("click",()=>{
+
+        book.style.display="none"
+    })
 }
 
+}
 function addbook(){
     let Status="Read";
     if(!Read.checked){
