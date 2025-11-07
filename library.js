@@ -19,12 +19,13 @@ function Book(title,author,pages,read){
     this.pages=pages;
     this.read=read;
 }
-    let mybook=new Book("Found Love","Snow",5000,"yes")
+    let mybook=new Book("Found Love","Snow",5000,"Read")
      mylibrary.push(mybook);
 function veiwbooks(){
     books.innerHTML="";
-    
+
 for (let i=0; i<mylibrary.length; i++){
+    
     const book=document.createElement('div');
     const details=document.createElement('h2');
     details.setAttribute('class','details');
@@ -46,8 +47,11 @@ for (let i=0; i<mylibrary.length; i++){
 }
 
 function addbook(){
-       
-       let book=new Book(Title.value,Author.value,Pages.value,Read.value);
+    let Status="Read";
+    if(!Read.checked){
+        Status="Unread";
+    }
+       let book=new Book(Title.value,Author.value,Pages.value,Status);
        mylibrary.push(book);
        Title.value=""
        Author.value=""
@@ -60,7 +64,7 @@ function addbook(){
 checkBook.addEventListener("click",veiwbooks,);
 
 Add.addEventListener("click",()=>{
-    if(Title.value!=""&&Pages.value!=""&&Author.value!=""&&Read.value!="")
+    if(Title.value!=""&&Pages.value!=""&&Author.value!="")
         addbook();
     else
         window.alert("please enter the details first")

@@ -53,3 +53,11 @@ input{
     text-align: center;
 
 }
+.label{
+    color: red;
+    font-size:1.5rem ;
+}
+.status{
+    display: flex;
+    gap: 0.6rem;
+}
