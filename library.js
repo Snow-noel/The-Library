@@ -71,12 +71,24 @@ function addbook(){
 }
 
 checkBook.addEventListener("click",veiwbooks,);
+Add.addEventListener("click", () => {
+    const inputContainsNumber = (inputValue) => /[0-9]/.test(inputValue);
 
-Add.addEventListener("click",()=>{
-    if(Title.value!=""&&Pages.value!=""&&Author.value!="")
+    const titleValue = Title.value;
+    const authorValue = Author.value;
+    const pagesValue = Pages.value;
+
+    const isAnyFieldEmpty = titleValue === "" || authorValue === "" || pagesValue === "";
+    const titleHasNumber = inputContainsNumber(titleValue);
+    const authorHasNumber = inputContainsNumber(authorValue);
+
+    if (isAnyFieldEmpty || titleHasNumber || authorHasNumber) {
+
+        window.alert("Please check your details: ensure all fields are filled, and Title/Author contain only text.");
+    } else {
         addbook();
-    else
-        window.alert("please enter the details first")
-})
+    }
+});
+
 
 
