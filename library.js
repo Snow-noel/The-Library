@@ -90,10 +90,20 @@ Add.addEventListener("click", () => {
         Read.value=""
         error.textContent=" Error: Please check your details: ensure all fields are filled, and Title/Author contain only text."
         error.classList.add('error');
-           main.append(error);
+        Add.textContent=""
+        Add.append(error)
+        Add.style.cssText=`
+         padding: 0.5rem;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        `
         setTimeout(()=>{
-            main.removeChild(error)
-        },5000);
+            Add.removeChild(error)
+            Add.textContent="Add Book";
+        },4000);
     } else {
         addbook();
     }

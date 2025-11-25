@@ -30,7 +30,7 @@ body{
 }
 .veiw,.AddBook{
     padding: 0.6rem;
-    background-color: rgba(120, 100, 110, 0.5);
+    background-color: rgba(120, 100, 110, 0.9);
     color: white;
     border-radius: 5px;
     border: none;
