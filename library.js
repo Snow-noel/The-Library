@@ -84,7 +84,17 @@ Add.addEventListener("click", () => {
 
     if (isAnyFieldEmpty || titleHasNumber || authorHasNumber) {
 
-        window.alert("Please check your details: ensure all fields are filled, and Title/Author contain only text.");
+        const error= document.createElement('p')
+        Title.value=""
+        Author.value=""
+        Pages.value=""
+        Read.value=""
+        error.textContent=" Error: Please check your details: ensure all fields are filled, and Title/Author contain only text."
+        error.classList.add('error');
+        main.append(error);
+        setTimeout(()=>{
+            main.removeChild(error);
+        },5000);
     } else {
         addbook();
     }
