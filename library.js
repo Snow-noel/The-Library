@@ -70,7 +70,7 @@ function addbook(){
     
 }
 
-checkBook.addEventListener("click",veiwbooks,);
+checkBook.addEventListener("click",veiwbooks);
 Add.addEventListener("click", () => {
     const inputContainsNumber = (inputValue) => /[0-9]/.test(inputValue);
 
@@ -83,7 +83,6 @@ Add.addEventListener("click", () => {
     const authorHasNumber = inputContainsNumber(authorValue);
 
     if (isAnyFieldEmpty || titleHasNumber || authorHasNumber) {
-
         const error= document.createElement('p')
         Title.value=""
         Author.value=""
@@ -91,9 +90,9 @@ Add.addEventListener("click", () => {
         Read.value=""
         error.textContent=" Error: Please check your details: ensure all fields are filled, and Title/Author contain only text."
         error.classList.add('error');
-        main.append(error);
+           main.append(error);
         setTimeout(()=>{
-            main.removeChild(error);
+            main.removeChild(error)
         },5000);
     } else {
         addbook();
